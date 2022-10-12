@@ -381,6 +381,8 @@ The sending node (swap maker):
 The receiving node (swap taker):
 * MUST [fail the swap](#failing-a-swap) if the `swap_id` changed.
 * MUST check that the `payreq` amount matches the negotiated `amount` of the swap and [fail the swap](#failing-a-swap) if not.
+* MUST check that the `payment_hash` of the `payreq` does match the the `payment_hash` of the broadcasted [`opening_transaction`](#opening-transaction) with the id `tx_id` and [fail the swap](#failing-a-swap) if not.
+* MUST check that the `min_final_cltv_expiry` is safe to use and not larger than half of the [csv limit](#csv-times-and-confirmations) of the swap and [fail the swap](#failing-a-swap) if it does exceed csv/2. 
 * SHOULD fail any htlc that would change the channel into a state, where the swap invoice can not be payed until the swap invoice was payed.
 * MUST wait for the [opening_transaction](#opening-transaction) with `tx_id` to be confirmed.
 * MUST verify the [opening_transaction](#opening-transaction) output with index `script_out`:
