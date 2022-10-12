@@ -38,7 +38,7 @@ The key words "MUST", "MUST NOT", "REQUIRED", "SHALL", "SHALL NOT", "SHOULD", "S
       - [The `claim_by_csv` path](#the-claim_by_csv-path)
 
 ## General
-The `protocol_version` is included to allow for possible changes in the future. The `protocol_version` of this document is `1`.
+The `protocol_version` is included to allow for possible changes in the future. The `protocol_version` of this document is `2`.
 
 PeerSwap utilizes custom messages as described in [BOLT#1](https://github.com/Lightning/bolts/blob/master/01-messaging.md). The types are in range `42069`-`42085`. The `payload` is JSON encoded.
 
